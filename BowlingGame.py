@@ -8,7 +8,7 @@ class BowlingGame:
         global roll_number
 
         frame_number=0
-        bowling_frames = [[0 for x in range(11)] for y in range(3)]
+        bowling_frames = [[0 for x in range(12)] for y in range(3)]
         frame_score_index=2
         roll_number=0
 
@@ -16,15 +16,26 @@ class BowlingGame:
         global roll_number
         global frame_number
 
-        if (frame_number <= 10):
+        if (frame_number <= 11):
 
             bowling_frames[roll_number][frame_number] = pins_knocked
 
             if (roll_number < 1):    
 
                 roll_number +=1
+
+                if(pins_knocked==10):
+                    bowling_frames[roll_number][frame_number]=0
+
+                    BowlingGame.compute_bonuses(self)
+
+                    bowling_frames[frame_score_index][frame_number] = bowling_frames[frame_score_index][frame_number-1] + bowling_frames[roll_number-1][frame_number] + bowling_frames[roll_number][frame_number]
+        
+                    roll_number=0
+                    frame_number += 1
+
                 return True
-           
+
             elif (roll_number == 1):
                 
                 BowlingGame.compute_bonuses(self)

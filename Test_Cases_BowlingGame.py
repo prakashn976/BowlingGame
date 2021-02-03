@@ -113,13 +113,14 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,10)
-        BowlingGame.score_calculator(self,0)
+        #BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,4)
         BowlingGame.score_calculator(self,3)
 
         self.assertEqual(51,BowlingGame.fetch_framescore(self,6))
-
+        #for i in range(7):
+         #  print(BowlingGame.fetch_framescore(self,i))
 
     def test_totalscore_withdoublestrike(self):
 
@@ -138,16 +139,16 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,10)
-        BowlingGame.score_calculator(self,0)
+        #BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,4)
         BowlingGame.score_calculator(self,3)
 
         BowlingGame.score_calculator(self,10)
-        BowlingGame.score_calculator(self,0)
+        #BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,10)
-        BowlingGame.score_calculator(self,0)
+        #BowlingGame.score_calculator(self,0)
 
         BowlingGame.score_calculator(self,5)
         BowlingGame.score_calculator(self,3)
@@ -162,16 +163,16 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.define_variables(self)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
         
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
         
         self.assertEqual(30, BowlingGame.fetch_framescore(self,1))
 
@@ -192,16 +193,16 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 4)
         BowlingGame.score_calculator(self, 3)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 5)
         BowlingGame.score_calculator(self, 3)
@@ -210,10 +211,9 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.score_calculator(self, 3)
 
         BowlingGame.score_calculator(self, 10) 
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         self.assertEqual(122, BowlingGame.fetch_framescore(self,10))
-
   
     def test_update_strike_at_tenth_frame(self):
 
@@ -232,27 +232,143 @@ class BowlingGameTest(unittest.TestCase):
         BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 4)
         BowlingGame.score_calculator(self, 3)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 5)
         BowlingGame.score_calculator(self, 3)
 
         BowlingGame.score_calculator(self, 10)
-        BowlingGame.score_calculator(self, 0)
+        #BowlingGame.score_calculator(self, 0)
 
         BowlingGame.score_calculator(self, 5)
         BowlingGame.score_calculator(self, 5)
         
         self.assertEqual(122, BowlingGame.fetch_framescore(self,10))
+
+
+    def test_gutter_rolls_total_score_zero(self):
+
+            BowlingGame.define_variables(self)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 0)
+
+           # BowlingGame.score_calculator(self, 0)
+           # BowlingGame.score_calculator(self, 0)
+            
+            self.assertEqual(0, BowlingGame.fetch_framescore(self,10))
+
+    def test_all_strike_total_score(self):
+
+            BowlingGame.define_variables(self)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 10)
+            BowlingGame.score_calculator(self, 10)
+            
+            self.assertEqual(300, BowlingGame.fetch_framescore(self,10))
+
+    def test_all_strike_with_maximum_allowed_only_ten_frames(self):
+
+            BowlingGame.define_variables(self)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+
+            BowlingGame.score_calculator(self, 10)
+            #BowlingGame.score_calculator(self, 0)
+            BowlingGame.score_calculator(self, 10)
+            BowlingGame.score_calculator(self, 10)
+            
+            self.assertFalse(False,BowlingGame.score_calculator)
 
 if __name__ == '__main__':
     unittest.main()
